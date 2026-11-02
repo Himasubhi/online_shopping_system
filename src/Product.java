@@ -11,7 +11,6 @@ public class Product {
         this.stock= stock;
     }
 
-    // TODO: write getters: getId(), getName(), getPrice(), getStock()
     public int getId(){
         return id;
     }
@@ -24,6 +23,17 @@ public class Product {
     public int getStock(){
         return stock;
     }
+
+    public boolean reduceStock(int quantity) {
+
+    if (quantity <= 0 || quantity > stock) {
+        return false;
+    }
+
+    stock = stock - quantity;
+
+    return true;
+}
 
     @Override
     public String toString() {
